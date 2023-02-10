@@ -1,0 +1,23 @@
+pipeline{
+  agent any
+  environment {
+    path = "$PATH:/usr/share/maven/bin"
+        }
+        stages{
+            stage('Get code From GIT'){
+              steps{
+               echo "Cloning Repo"
+               }
+             }
+             stage('Maven Build'){
+                steps{
+                  sh 'mvn clean package'
+                }
+              }
+              stage('SonarQube Code analysis'){
+                 steps{
+ 
+
+
+
+                 
